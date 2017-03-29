@@ -1,11 +1,22 @@
 require 'test_helper'
 
-class MovescountTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Movescount::VERSION
+describe Movescount do
+  describe '.configuration' do
+    it 'creates a configuration' do
+      Movescount.configuration.must_be_instance_of Movescount::Configuration
+    end
+    it 'caches the configuration' do
+      Movescount.configuration.must_equal Movescount.configuration
+    end
   end
 
-  def test_it_does_something_useful
-    assert false
+  describe '.configure' do
+    it 'allows a block that sets configs' do
+      new_key = 'abcdefghijklmno'
+      Movescount.configure{|c| c.app_key = new_key }
+      Movescount.configuration.app_key.must_equal new_key
+      # Make sure the test suite is clean again
+      Movescount.remove_class_variable(:@@configuration)
+    end
   end
 end
