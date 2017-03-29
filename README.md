@@ -1,8 +1,6 @@
 # Movescount
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/movescount`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A gem for communicating with the [Suunto movescount](http://www.movescount.com/) API.
 
 ## Installation
 
@@ -20,9 +18,28 @@ Or install it yourself as:
 
     $ gem install movescount
 
+## Configuration
+
+You can use a configure block to setup the gem and provide the `app_key`
+
+```ruby
+Movescount.configure do |config|
+  config.app_key = 'TestAppKey'
+  config.api_uri = 'https://uiservices.movescount.com'
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+It all starts with a movescount member object
+
+```ruby
+Movescount::Member.new(email: 'foo@bar.com', userkey: 'ABCDEFGHIJKLMNO')
+```
+
+This `userkey` is an extra check if the requests are from the same origin. When you change the `userkey`, the user has to reconfirm the integration in movescount. So make sure you save this (user specific) key.
+
+TODO: More and don't forget the nice rails concerns
 
 ## Development
 
@@ -32,10 +49,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/movescount.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/StefSchenkelaars/movescount.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+## Ideas from
+
+https://robots.thoughtbot.com/mygem-configure-block

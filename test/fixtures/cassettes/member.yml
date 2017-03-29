@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://uiservices.movescount.com/members/private?appKey=TestAppKey&email=stef.schenkelaars@gmail.com&userKey=Ws55aENtjiprz3g
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 29 Aug 2016 13:20:53 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '996'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"Activities":null,"ActivitiesURI":"members\/private\/activities","BirthDate":"1974-01-01","Country":null,"DefaultActivityID":1,"Description":"","EmailAddress":"stef.schenkelaars@gmail.com","FirstDayOfWeek":1,"FitnessIndex":5,"FollowersURI":"members\/private\/followers","FollowingURI":"members\/private\/following","GroupURIs":"","GroupsURI":"members\/StefSchenkelaars\/groups","HRZone1":60,"HRZone2":70,"HRZone3":80,"HRZone4":90,"Height":1.6,"IPhoneSkinsURIs":"","ImageURI":null,"ImageURI128":null,"ImageURI222":null,"ImageURIOriginal":null,"IsMale":true,"IsMetricUnits":true,"Latitude":null,"LocalTimeOffsetFromUTC":120,"LocaleID":9,"LocationName":"","Longitude":null,"MaxHR":179,"MaxPhotoCount":1600,"MemberID":658446,"MemberMoveSummary":null,"NumberOfFollowers":0,"NumberOfMoves":1,"PhotoCount":0,"PublicityLevel":2,"RestHR":60,"SelfURI":"members\/private","ShoutFeedURI":"members\/private\/shoutfeed","SpeedUnit":0,"TimeFormat":0,"Username":"StefSchenkelaars","WebsiteURL":null,"Weight":60}'
+    http_version:
+  recorded_at: Mon, 29 Aug 2016 13:20:55 GMT
